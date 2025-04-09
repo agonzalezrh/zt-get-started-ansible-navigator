@@ -20,10 +20,6 @@ antora:
       label: Knowledge check
       solveButton: true
 
-
 tabs:
   - name: VSCode Editor
-    port: 8443
-    path: /?folder=/home/rhel/ansible-files/
-
-  
+    url: https://control-${guid}.${domain}/editor/?folder=/home/rhel/ansible-files/
