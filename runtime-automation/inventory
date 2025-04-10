@@ -1,5 +1,5 @@
-[controller]
-control
+[local]
+localhost
 
-[all:vars]
-ansible_user = rhel
+[local:vars]
+ansible_connection = local
