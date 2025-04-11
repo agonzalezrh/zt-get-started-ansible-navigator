@@ -2,7 +2,7 @@
 USER=rhel
 
 # create playbook test.yml
-su - $USER -c 'cat >/home/$USER/test.yml <<EOL
+cat >/home/$USER/test.yml <<EOL
 ---
 - name: this is just a test
   hosts: localhost
@@ -14,4 +14,4 @@ su - $USER -c 'cat >/home/$USER/test.yml <<EOL
 
 EOL
 
-cat /home/$USER/test.yml'
+cat /home/$USER/test.yml

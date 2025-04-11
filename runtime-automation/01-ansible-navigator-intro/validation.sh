@@ -9,7 +9,7 @@ if [ ! -f /home/$USER/test.yml ]; then
 fi
 
 # test the playbook runs successfully
-su - $USER -c 'ansible-navigator run /home/$USER/test.yml -m stdout'
+ansible-navigator run /home/$USER/test.yml -m stdout
 retVal=$?
 if [ $retVal -ne 0 ]; then
     fail-message "test.yml does not execute successfully"
