@@ -20,7 +20,11 @@
       ansible.builtin.debug:
         msg: "Hello Runner"
 
-    - name: Check if setup-{{ ansible_host }}.sh exists
+    - name: Debug ansible_host variable
+      debug:
+        var: ansible_host
+
+    - name: Check if setup-server.sh exists
       ansible.builtin.stat:
         path: "./setup-{{ ansible_host }}.sh"
       delegate_to: localhost
