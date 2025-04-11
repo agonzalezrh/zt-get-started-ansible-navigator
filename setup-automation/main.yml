@@ -20,7 +20,7 @@
       ansible.builtin.debug:
         msg: "Hello Runner"
 
-    - name: Check if module_01/setup.sh exists
+    - name: Check if setup-{{ ansible_host }}.sh exists
       ansible.builtin.stat:
         path: "./setup-{{ ansible_host }}.sh"
       delegate_to: localhost
@@ -34,6 +34,7 @@
     - name: Output script result
       ansible.builtin.debug:
         var: r_result.stdout
+      when: r_script_test.stat.exists
 
     - name: Write script result to file
       ansible.builtin.copy:
@@ -45,8 +46,11 @@
     - name: Output script result
       ansible.builtin.debug:
         var: r_result
+      when: r_result is defined
 
     - name: Fail if stage was failed
       ansible.builtin.fail:
         msg: "Setup failed"
-      when: r_result.rc != 0
+      when:
+        - r_result is defined
+        - r_result.rc != 0
