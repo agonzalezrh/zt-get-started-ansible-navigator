@@ -22,6 +22,6 @@ antora:
 
 tabs:
   - name: VSCode Editor
-    url: https://control-${guid}.${domain}/editor/?folder=/home/rhel/playbook-artifacts/
+    url: https://control-${guid}.${domain}/editor/?folder=/home/rhel/
   - name: Terminal
     url: /wetty
