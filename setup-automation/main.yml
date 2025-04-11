@@ -22,13 +22,13 @@
 
     - name: Check if module_01/setup.sh exists
       ansible.builtin.stat:
-        path: "./setup-{{ ansible_hostname }}.sh"
+        path: "./setup-{{ ansible_host }}.sh"
       delegate_to: localhost
       register: r_script_test
 
     - name: Execute setup.sh if it exists
       when: r_script_test.stat.exists
-      script: "./setup-{{ ansible_hostname }}.sh"
+      script: "./setup-{{ ansible_host }}.sh"
       register: r_result
 
     - name: Output script result
@@ -38,7 +38,7 @@
     - name: Write script result to file
       ansible.builtin.copy:
         content: "{{ r_result.stdout }}"
-        dest: "/tmp/{{ ansible_hostname }}-setup-script.out"
+        dest: "/tmp/{{ ansible_host }}-setup-script.out"
       delegate_to: localhost
       when: r_result is defined
 
