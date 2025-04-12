@@ -5,7 +5,9 @@
   cores: "2"
   memory: "2G"
   image_size: "20Gi"
-  tags: []
+  tags:
+    - key: "AnsibleGroup"
+      value: "nodes"
   services:
     - name: control
       ports:
