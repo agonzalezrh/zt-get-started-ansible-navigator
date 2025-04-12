@@ -7,7 +7,7 @@
   image_size: "20Gi"
   tags:
     - key: "AnsibleGroup"
-      value: "nodes"
+      value: "isolated"
   services:
     - name: control
       ports:
