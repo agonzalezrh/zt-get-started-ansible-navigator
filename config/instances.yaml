@@ -5,6 +5,7 @@
   cores: "2"
   memory: "2G"
   image_size: "20Gi"
+  tags: []
   services:
     - name: control
       ports:
