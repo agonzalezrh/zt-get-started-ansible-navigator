@@ -1,0 +1,22 @@
+---
+instances:
+  - name: "control"
+    bootloader: efi
+    image: "ansible-navigator-ansible"
+    cores: "2"
+    memory: "2G"
+    image_size: "20Gi"
+    services:
+      - name: control
+        ports:
+          - port: 80
+            protocol: TCP
+            targetPort: 80
+            name: control-http
+    routes:
+      - name: control-http
+        host: control
+        service: control
+        targetPort: 80
+        tls: true
+        tls_termination: Edge
