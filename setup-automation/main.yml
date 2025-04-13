@@ -16,6 +16,8 @@
   become: false
 
   tasks:
+
+    - ansible.builtin.wait_for_connection:
     - name: Simple debug task
       ansible.builtin.debug:
         msg: "Hello Runner"
