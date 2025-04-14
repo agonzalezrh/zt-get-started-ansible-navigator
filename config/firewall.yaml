@@ -1,4 +1,5 @@
 ---
+# By default egress and ingress are disabled. Define the allowed rules here.
 egress:
   - ports:
       - protocol: TCP
