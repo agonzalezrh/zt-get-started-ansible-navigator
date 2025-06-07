@@ -2,7 +2,8 @@
 virtualmachines:
   - name: "control"
     bootloader: efi
-    image: "ansible-navigator-ansible"
+    image: "http://10.37.188.27/images/aap/ansible-navigator-ansible.qcow2"
+    image_type: url
     cores: "2"
     memory: "2G"
     image_size: "20Gi"
